@@ -1,11 +1,60 @@
-import { DOMParser } from "jsr:@b-fuze/deno-dom";
-import { object, string } from "npm:zod";
+import { object, string } from "zod";
 import { parseDate } from "./date.ts";
 
 export const fractionIds = new Map([
   [1, "Optisk sortert avfall"],
   [4, "Glass- og metallemballasje"],
 ]);
+
+const stateSchema = object({
+  state: object({
+    "min-renovasjon": object({
+      ajaxUrl: string(),
+      nonce: string(),
+    }),
+  }),
+});
+
+/**
+ * The page embeds its WordPress interactivity state in one of several
+ * `<script type="application/json">` tags. Parsed with HTMLRewriter, which is
+ * built into the Workers runtime, so no HTML parser dependency is needed.
+ */
+async function getPageState(response: Response) {
+  const blocks: string[] = [];
+  let buffer = "";
+
+  await new HTMLRewriter()
+    .on('script[type="application/json"]', {
+      element(element) {
+        buffer = "";
+        element.onEndTag(() => {
+          blocks.push(buffer);
+        });
+      },
+      text(chunk) {
+        buffer += chunk.text;
+      },
+    })
+    .transform(response)
+    .arrayBuffer();
+
+  for (const block of blocks) {
+    let json: unknown;
+    try {
+      json = JSON.parse(block);
+    } catch {
+      continue;
+    }
+
+    const parsed = stateSchema.safeParse(json);
+    if (parsed.success) {
+      return parsed.data.state["min-renovasjon"];
+    }
+  }
+
+  throw new Error("JSON script tag not found");
+}
 
 export async function getEvents(
   { streetName, streetCode, houseNumber, munNumber }: {
@@ -15,24 +64,9 @@ export async function getEvents(
     munNumber: string;
   },
 ) {
-  const htmlDocument =
-    await (await fetch("https://remiks.no/privat/tommekalender")).text();
-  const parser = new DOMParser();
-  const dom = parser.parseFromString(htmlDocument, "text/html");
-  const json = dom.querySelector('script[type="application/json"]');
-
-  if (!json) {
-    throw new Error("JSON script tag not found");
-  }
-
-  const { ajaxUrl: url, nonce: security } = object({
-    state: object({
-      "min-renovasjon": object({
-        ajaxUrl: string(),
-        nonce: string(),
-      }),
-    }),
-  }).parse(JSON.parse(json.innerHTML)).state["min-renovasjon"];
+  const { ajaxUrl: url, nonce: security } = await getPageState(
+    await fetch("https://remiks.no/privat/tommekalender"),
+  );
 
   const body = new FormData();
   body.append("security", security);
