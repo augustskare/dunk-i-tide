@@ -1,5 +1,6 @@
 import { createEvents, type DateTime } from "ics";
 import { addressLookup, fractionIds, getEvents } from "./remiks.ts";
+import { getNorkartEvents } from "./norkart.ts";
 
 export default {
   async fetch(req) {
@@ -14,15 +15,22 @@ export default {
         throw new Error("Address not found");
       }
 
-      const events = await getEvents({
+      const collectionAddress = {
         streetName: address.adressenavn,
         streetCode: address.adressekode.toString(),
-        houseNumber: address.nummer.toString(),
+        houseNumber: `${address.nummer}${address.bokstav ?? ""}`,
         munNumber: address.kommunenummer,
-      });
+      };
+      const isRemiks = ["5501", "5534"].includes(address.kommunenummer);
+      const events = isRemiks
+        ? (await getEvents(collectionAddress)).map((event) => ({
+          ...event,
+          title: fractionIds.get(event.fraction) ?? "Ukjent",
+        }))
+        : await getNorkartEvents(collectionAddress);
 
       const calendarEvents = createEvents(
-        events.map(({ date, fraction }) => {
+        events.map(({ date, fraction, title }) => {
           const calDate = [
             date.getFullYear(),
             date.getMonth() + 1,
@@ -30,9 +38,9 @@ export default {
           ] as DateTime;
 
           return {
-            calName: "Remiks tømmekalender",
-            uid: `${date.getTime()}@tommekalender.no`,
-            title: fractionIds.get(fraction) ?? "Ukjent",
+            calName: "Tømmekalender",
+            uid: `${address.kommunenummer}-${address.adressekode}-${address.nummer}${address.bokstav ?? ""}-${fraction}-${date.getTime()}@tommekalender.no`,
+            title,
             start: calDate,
             end: calDate,
           };
