@@ -1,11 +1,20 @@
 import assert from "node:assert/strict";
-import { test } from "node:test";
-import worker from "../index.ts";
+import { after, before, test } from "node:test";
+import { createWorker } from "./helpers/worker.ts";
+
+let worker: Awaited<ReturnType<typeof createWorker>>;
+let mockFetch: typeof fetch = async () => { throw new Error("Unexpected outbound request"); };
+before(async () => {
+  worker = await createWorker((request) => mockFetch(request.url, {
+    headers: request.headers, method: request.method,
+  }));
+});
+after(async () => { await worker?.dispose(); });
 
 async function withFetch(mock: typeof fetch, run: () => Promise<void>) {
-  const original = globalThis.fetch;
-  globalThis.fetch = mock;
-  try { await run(); } finally { globalThis.fetch = original; }
+  const original = mockFetch;
+  mockFetch = mock;
+  try { await run(); } finally { mockFetch = original; }
 }
 
 function upstream(options: { municipality?: string; empty?: boolean; invalidDate?: boolean; status?: number } = {}): typeof fetch {
@@ -38,10 +47,10 @@ function upstream(options: { municipality?: string; empty?: boolean; invalidDate
   };
 }
 
-const request = () => worker.fetch(new Request("https://calendar.example/?q=Rådhustorget+2A"), {} as never, {} as never);
+const request = () => worker.fetch("?q=Rådhustorget+2A");
 
 test("missing address query remains a 400", async () => {
-  const response = await worker.fetch(new Request("https://calendar.example/"), {} as never, {} as never);
+  const response = await worker.fetch("?q=");
   assert.equal(response.status, 400);
   assert.equal(await response.text(), "Missing query parameter");
 });

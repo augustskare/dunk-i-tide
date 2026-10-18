@@ -1,11 +1,18 @@
 import { createEvents, type DateTime } from "ics";
 import { addressLookup, fractionIds, getEvents } from "./remiks.ts";
 import { getNorkartEvents } from "./norkart.ts";
+import indexHtml from "./index.html";
 
 export default {
   async fetch(req) {
     try {
-      const query = new URL(req.url).searchParams.get("q");
+      const url = new URL(req.url);
+      if ((url.pathname === "/" || url.pathname === "/index.html") && !url.searchParams.has("q")) {
+        return new Response(indexHtml, {
+          headers: { "Content-Type": "text/html; charset=utf-8" },
+        });
+      }
+      const query = url.searchParams.get("q");
       if (!query) {
         throw new Error("Missing query parameter");
       }

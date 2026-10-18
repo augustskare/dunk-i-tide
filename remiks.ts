@@ -1,4 +1,4 @@
-import { object, string } from "zod";
+import { array, boolean, number, object, string, union } from "zod";
 import { parseDate } from "./date.ts";
 
 export const fractionIds = new Map([
@@ -13,6 +13,14 @@ const stateSchema = object({
       nonce: string(),
     }),
   }),
+});
+
+const calendarSchema = object({
+  success: boolean(),
+  data: union([
+    array(object({ fraksjonId: number(), tommedatoer: array(string()) })),
+    object({ message: string() }),
+  ]),
 });
 
 /**
@@ -77,16 +85,15 @@ export async function getEvents(
   body.append("munNumber", munNumber);
   body.append("targetEndpoint", "dates");
 
-  const data = await (await fetch(url, {
+  const response = await fetch(url, {
     method: "POST",
     body,
-  })).json() as {
-    success: boolean;
-    data: {
-      fraksjonId: number;
-      tommedatoer: string[];
-    }[];
-  };
+  });
+  if (!response.ok) throw new Error(`Remiks request failed (HTTP ${response.status})`);
+  const data = calendarSchema.parse(await response.json());
+  if (!Array.isArray(data.data)) throw new Error(data.data.message);
+  if (!data.success) throw new Error("Remiks request failed");
+  if (data.data.length === 0) throw new Error("No collection dates found for this address in Remiks");
 
   return data.data.flatMap((item) =>
     item.tommedatoer.map((date) => ({

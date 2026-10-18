@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dunk i tide – tømmekalender</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+      body { max-width: 36rem; margin: 4rem auto; padding: 0 1.25rem; line-height: 1.6; }
+      h1 { line-height: 1.2; }
+      label { display: block; font-weight: 600; margin-bottom: .4rem; }
+      input, button { box-sizing: border-box; font: inherit; padding: .75rem; border: 1px solid #888; border-radius: .4rem; }
+      input { width: 100%; margin-bottom: .75rem; }
+      button { cursor: pointer; }
+      button:disabled { cursor: wait; }
+      #result { padding: 1rem; border: 1px solid #888; border-radius: .4rem; }
+      .note { font-size: .9rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Dunk i tide</h1>
+      <p>Finn tømmekalenderen for adressen din.</p>
+      <form action="/" method="get">
+        <label for="address">Adresse med husnummer og sted</label>
+        <input id="address" name="q" type="search" placeholder="Rådhustorget 2, Sandvika" required autocomplete="street-address">
+        <button type="submit">Finn tømmekalender</button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+      <div id="result" hidden>
+        <a id="calendar" download="tommekalender.ics">Last ned tømmekalender (.ics)</a>
+        <p class="note">Du kan også kopiere lenken og abonnere på den i kalenderappen din.</p>
+      </div>
+      <p class="note">Støtter Remiks i Tromsø og Karlsøy og kommuner som bruker Min Renovasjon / Norkart. Ikke alle adresser eller kommuner har tilgjengelige tømmedatoer.</p>
+    </main>
+    <script type="module">
+      const form = document.querySelector('form');
+      const address = document.querySelector('#address');
+      const button = document.querySelector('button');
+      const status = document.querySelector('#status');
+      const result = document.querySelector('#result');
+      const calendar = document.querySelector('#calendar');
+
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const query = address.value.trim();
+        result.hidden = true;
+        calendar.removeAttribute('href');
+        if (!query) {
+          status.textContent = 'Skriv inn en adresse med husnummer og sted.';
+          address.focus();
+          return;
+        }
+        button.disabled = true;
+        status.textContent = 'Henter tømmekalender …';
+        const url = new URL('/', window.location.origin);
+        url.searchParams.set('q', query);
+        try {
+          const response = await fetch(url);
+          const body = await response.text();
+          if (!response.ok) {
+            status.textContent = `Fant ingen kalender: ${body}`;
+            return;
+          }
+          calendar.href = url.href;
+          result.hidden = false;
+          status.textContent = 'Tømmekalenderen er klar.';
+        } catch {
+          status.textContent = 'Kunne ikke hente kalenderen. Prøv igjen om litt.';
+        } finally {
+          button.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>
