@@ -1,0 +1,4223 @@
+{
+  "checkedAt": "2026-10-19T12:46:54.232Z",
+  "sources": {
+    "municipalities": "https://ws.geonorge.no/kommuneinfo/v1/kommuner",
+    "norkartRegistry": "https://norkartrenovasjon.azurewebsites.net/proxyserver.ashx?server=https://www.webatlas.no/wacloud/servicerepository/CatalogueService.svc/json/GetRegisteredAppCustomers?Appid=MobilOS-NorkartRenovasjon"
+  },
+  "sampleSize": 3,
+  "method": "Up to 3 addresses per registered municipality (known live-test addresses first, then Geonorge samples), through the bundled Worker in workerd. Verified means a named calendar with unique municipality-specific UIDs and at least one current or future collection date. A sample does not prove every address works. Registry absence is not proof of no Norkart data.",
+  "counts": {
+    "not-listed": 153,
+    "verified": 156,
+    "no-dates-in-sample": 48
+  },
+  "municipalities": [
+    {
+      "number": "0301",
+      "name": "Oslo",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1101",
+      "name": "Eigersund",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvbakken 1, 4370 EGERSUND"
+        }
+      ],
+      "sampleAddress": "Sølvbakken 1, 4370 EGERSUND",
+      "events": 12
+    },
+    {
+      "number": "1103",
+      "name": "Stavanger",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1106",
+      "name": "Haugesund",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1108",
+      "name": "Sandnes",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1111",
+      "name": "Sokndal",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søre Oddsfjellveien 12, 4380 HAUGE I DALANE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Oddsfjellveien 14, 4380 HAUGE I DALANE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Oddsfjellveien 16, 4380 HAUGE I DALANE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "1112",
+      "name": "Lund",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørhell 1, 4460 MOI"
+        }
+      ],
+      "sampleAddress": "Sørhell 1, 4460 MOI",
+      "events": 10
+    },
+    {
+      "number": "1114",
+      "name": "Bjerkreim",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søre Tengesdal 130, 4387 BJERKREIM",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Tengesdal 135, 4387 BJERKREIM",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Tengesdal 145, 4387 BJERKREIM",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "1119",
+      "name": "Hå",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1120",
+      "name": "Klepp",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørbakken 1, 4353 KLEPP STASJON"
+        }
+      ],
+      "sampleAddress": "Sørbakken 1, 4353 KLEPP STASJON",
+      "events": 8
+    },
+    {
+      "number": "1121",
+      "name": "Time",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1122",
+      "name": "Gjesdal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1124",
+      "name": "Sola",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sømmebakken 31, 4055 SOLA"
+        }
+      ],
+      "sampleAddress": "Sømmebakken 31, 4055 SOLA",
+      "events": 7
+    },
+    {
+      "number": "1127",
+      "name": "Randaberg",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørlibakken 10, 4073 RANDABERG"
+        }
+      ],
+      "sampleAddress": "Sørlibakken 10, 4073 RANDABERG",
+      "events": 8
+    },
+    {
+      "number": "1130",
+      "name": "Strand",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1133",
+      "name": "Hjelmeland",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1134",
+      "name": "Suldal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1135",
+      "name": "Sauda",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1144",
+      "name": "Kvitsøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1145",
+      "name": "Bokn",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1146",
+      "name": "Tysvær",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1149",
+      "name": "Karmøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1151",
+      "name": "Utsira",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1160",
+      "name": "Vindafjord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1505",
+      "name": "Kristiansund",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1506",
+      "name": "Molde",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1508",
+      "name": "Ålesund",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørheimsvegen 15, 6014 ÅLESUND"
+        }
+      ],
+      "sampleAddress": "Sørheimsvegen 15, 6014 ÅLESUND",
+      "events": 8
+    },
+    {
+      "number": "1511",
+      "name": "Vanylven",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Taksetvegen 1, 6142 EIDSÅ"
+        }
+      ],
+      "sampleAddress": "Taksetvegen 1, 6142 EIDSÅ",
+      "events": 8
+    },
+    {
+      "number": "1514",
+      "name": "Sande",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Voksa 14, 6089 SANDSHAMN"
+        }
+      ],
+      "sampleAddress": "Søre Voksa 14, 6089 SANDSHAMN",
+      "events": 8
+    },
+    {
+      "number": "1515",
+      "name": "Herøy",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tarbergvegen 1, 6076 MOLTUSTRANDA"
+        }
+      ],
+      "sampleAddress": "Tarbergvegen 1, 6076 MOLTUSTRANDA",
+      "events": 8
+    },
+    {
+      "number": "1516",
+      "name": "Ulstein",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Eika 168, 6068 EIKSUND"
+        }
+      ],
+      "sampleAddress": "Søre Eika 168, 6068 EIKSUND",
+      "events": 6
+    },
+    {
+      "number": "1517",
+      "name": "Hareid",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Teigane 10, 6060 HAREID"
+        }
+      ],
+      "sampleAddress": "Teigane 10, 6060 HAREID",
+      "events": 8
+    },
+    {
+      "number": "1520",
+      "name": "Ørsta",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørestranda 102, 6160 HOVDEBYGDA"
+        }
+      ],
+      "sampleAddress": "Sørestranda 102, 6160 HOVDEBYGDA",
+      "events": 9
+    },
+    {
+      "number": "1525",
+      "name": "Stranda",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tegane 10, 6200 STRANDA"
+        }
+      ],
+      "sampleAddress": "Tegane 10, 6200 STRANDA",
+      "events": 9
+    },
+    {
+      "number": "1528",
+      "name": "Sykkylven",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørestrandvegen 1005, 6222 IKORNNES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørestrandvegen 1007, 6222 IKORNNES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørestrandvegen 1009, 6222 IKORNNES"
+        }
+      ],
+      "sampleAddress": "Sørestrandvegen 1009, 6222 IKORNNES",
+      "events": 9
+    },
+    {
+      "number": "1531",
+      "name": "Sula",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Hammaren 10, 6035 FISKARSTRAND"
+        }
+      ],
+      "sampleAddress": "Søre Hammaren 10, 6035 FISKARSTRAND",
+      "events": 9
+    },
+    {
+      "number": "1532",
+      "name": "Giske",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølmondvegen 1, 6055 GODØYA"
+        }
+      ],
+      "sampleAddress": "Sølmondvegen 1, 6055 GODØYA",
+      "events": 9
+    },
+    {
+      "number": "1535",
+      "name": "Vestnes",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørsidevegen 2873, 6387 VÅGSTRANDA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørsidevegen 2875, 6387 VÅGSTRANDA"
+        }
+      ],
+      "sampleAddress": "Sørsidevegen 2875, 6387 VÅGSTRANDA",
+      "events": 9
+    },
+    {
+      "number": "1539",
+      "name": "Rauma",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1547",
+      "name": "Aukra",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1554",
+      "name": "Averøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1557",
+      "name": "Gjemnes",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1560",
+      "name": "Tingvoll",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1563",
+      "name": "Sunndal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1566",
+      "name": "Surnadal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1573",
+      "name": "Smøla",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1576",
+      "name": "Aure",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1577",
+      "name": "Volda",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Taraldset, Seljesetvegen 101, 6763 HORNINDAL"
+        }
+      ],
+      "sampleAddress": "Taraldset, Seljesetvegen 101, 6763 HORNINDAL",
+      "events": 8
+    },
+    {
+      "number": "1578",
+      "name": "Fjord",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Tafjordvegen 1385, 6213 TAFJORD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tafjordvegen 1395, 6213 TAFJORD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tafjordvegen 1401, 6213 TAFJORD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "1579",
+      "name": "Hustadvika",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1580",
+      "name": "Haram",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørgardsvegen 102, 6294 FJØRTOFT"
+        }
+      ],
+      "sampleAddress": "Sørgardsvegen 102, 6294 FJØRTOFT",
+      "events": 7
+    },
+    {
+      "number": "1804",
+      "name": "Bodø",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1806",
+      "name": "Narvik",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sør-Skjomen 233, 8523 SKJOMEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Skjomen 241, 8523 SKJOMEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Skjomen 257, 8523 SKJOMEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "1811",
+      "name": "Bindal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørfjordveien 1, 7980 TERRÅK"
+        }
+      ],
+      "sampleAddress": "Sørfjordveien 1, 7980 TERRÅK",
+      "events": 8
+    },
+    {
+      "number": "1812",
+      "name": "Sømna",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1813",
+      "name": "Brønnøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1815",
+      "name": "Vega",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1816",
+      "name": "Vevelstad",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1818",
+      "name": "Herøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1820",
+      "name": "Alstahaug",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1822",
+      "name": "Leirfjord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1824",
+      "name": "Vefsn",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørbakken 2, 8660 MOSJØEN"
+        }
+      ],
+      "sampleAddress": "Sørbakken 2, 8660 MOSJØEN",
+      "events": 4
+    },
+    {
+      "number": "1825",
+      "name": "Grane",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1826",
+      "name": "Hattfjelldal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1827",
+      "name": "Dønna",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1828",
+      "name": "Nesna",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørvestvegen 11, 8700 NESNA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørvestvegen 4, 8700 NESNA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørvestvegen 9, 8700 NESNA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "1832",
+      "name": "Hemnes",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørfjellveien 1, 8646 KORGEN"
+        }
+      ],
+      "sampleAddress": "Sørfjellveien 1, 8646 KORGEN",
+      "events": 8
+    },
+    {
+      "number": "1833",
+      "name": "Rana",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre gate 11, 8624 MO I RANA"
+        }
+      ],
+      "sampleAddress": "Søndre gate 11, 8624 MO I RANA",
+      "events": 2
+    },
+    {
+      "number": "1834",
+      "name": "Lurøy",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sør-Hamna 1, 8750 TONNES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Hamna 10, 8750 TONNES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Hamna 11, 8750 TONNES"
+        }
+      ],
+      "sampleAddress": "Sør-Hamna 11, 8750 TONNES",
+      "events": 8
+    },
+    {
+      "number": "1835",
+      "name": "Træna",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Vestre Falla 10, 8770 TRÆNA"
+        }
+      ],
+      "sampleAddress": "Vestre Falla 10, 8770 TRÆNA",
+      "events": 10
+    },
+    {
+      "number": "1836",
+      "name": "Rødøy",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørfjordveien 103, 8190 SØRFJORDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørfjordveien 105, 8190 SØRFJORDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørfjordveien 107, 8190 SØRFJORDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "1837",
+      "name": "Meløy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1838",
+      "name": "Gildeskål",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1839",
+      "name": "Beiarn",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1840",
+      "name": "Saltdal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1841",
+      "name": "Fauske",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1845",
+      "name": "Sørfold",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1848",
+      "name": "Steigen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1851",
+      "name": "Lødingen",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Televegen 1, 8410 LØDINGEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Televegen 3, 8410 LØDINGEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Ternevegen 1, 8410 LØDINGEN"
+        }
+      ],
+      "sampleAddress": "Ternevegen 1, 8410 LØDINGEN",
+      "events": 9
+    },
+    {
+      "number": "1853",
+      "name": "Evenes",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sør-Kvitforsveien 26, 8534 LILAND",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Kvitforsveien 30, 8534 LILAND"
+        }
+      ],
+      "sampleAddress": "Sør-Kvitforsveien 30, 8534 LILAND",
+      "events": 10
+    },
+    {
+      "number": "1856",
+      "name": "Røst",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1857",
+      "name": "Værøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1859",
+      "name": "Flakstad",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1860",
+      "name": "Vestvågøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1865",
+      "name": "Vågan",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1866",
+      "name": "Hadsel",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre gate 13A, 8450 STOKMARKNES"
+        }
+      ],
+      "sampleAddress": "Søndre gate 13A, 8450 STOKMARKNES",
+      "events": 10
+    },
+    {
+      "number": "1867",
+      "name": "Bø",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørgårdsveien 12, 8475 STRAUMSJØEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørgårdsveien 13, 8475 STRAUMSJØEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørgårdsveien 16, 8475 STRAUMSJØEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "1868",
+      "name": "Øksnes",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sør-Buhågen 1, 8430 MYRE"
+        }
+      ],
+      "sampleAddress": "Sør-Buhågen 1, 8430 MYRE",
+      "events": 10
+    },
+    {
+      "number": "1870",
+      "name": "Sortland",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Frydenlund alle 10, 8400 SORTLAND"
+        }
+      ],
+      "sampleAddress": "Søndre Frydenlund alle 10, 8400 SORTLAND",
+      "events": 9
+    },
+    {
+      "number": "1871",
+      "name": "Andøy",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørgårdsveien 398, 8484 RISØYHAMN"
+        }
+      ],
+      "sampleAddress": "Sørgårdsveien 398, 8484 RISØYHAMN",
+      "events": 4
+    },
+    {
+      "number": "1874",
+      "name": "Moskenes",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "1875",
+      "name": "Hamarøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3101",
+      "name": "Halden",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvgata 10, 1767 HALDEN"
+        }
+      ],
+      "sampleAddress": "Sølvgata 10, 1767 HALDEN",
+      "events": 6
+    },
+    {
+      "number": "3103",
+      "name": "Moss",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søly terrasse 1, 1516 MOSS"
+        }
+      ],
+      "sampleAddress": "Søly terrasse 1, 1516 MOSS",
+      "events": 9
+    },
+    {
+      "number": "3105",
+      "name": "Sarpsborg",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørbybakken 1, 1739 BORGENHAUGEN"
+        }
+      ],
+      "sampleAddress": "Sørbybakken 1, 1739 BORGENHAUGEN",
+      "events": 10
+    },
+    {
+      "number": "3107",
+      "name": "Fredrikstad",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3110",
+      "name": "Hvaler",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3112",
+      "name": "Råde",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søgård, Østre Tofteberggata 1, 1643 RÅDE"
+        }
+      ],
+      "sampleAddress": "Søgård, Østre Tofteberggata 1, 1643 RÅDE",
+      "events": 10
+    },
+    {
+      "number": "3114",
+      "name": "Våler",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Augerød, Hobølveien 81, 1591 SPERREBOTN"
+        }
+      ],
+      "sampleAddress": "Søndre Augerød, Hobølveien 81, 1591 SPERREBOTN",
+      "events": 9
+    },
+    {
+      "number": "3116",
+      "name": "Skiptvet",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Liverudvei 107, 1816 SKIPTVET"
+        }
+      ],
+      "sampleAddress": "Søndre Liverudvei 107, 1816 SKIPTVET",
+      "events": 8
+    },
+    {
+      "number": "3118",
+      "name": "Indre Østfold",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvbergveien 1, 1820 SPYDEBERG"
+        }
+      ],
+      "sampleAddress": "Sølvbergveien 1, 1820 SPYDEBERG",
+      "events": 10
+    },
+    {
+      "number": "3120",
+      "name": "Rakkestad",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvskuttveien 119, 1892 DEGERNES"
+        }
+      ],
+      "sampleAddress": "Sølvskuttveien 119, 1892 DEGERNES",
+      "events": 8
+    },
+    {
+      "number": "3122",
+      "name": "Marker",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Djupedal 15, 1870 ØRJE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Djupedal 20, 1870 ØRJE"
+        }
+      ],
+      "sampleAddress": "Søndre Djupedal 20, 1870 ØRJE",
+      "events": 8
+    },
+    {
+      "number": "3124",
+      "name": "Aremark",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Bøenødegård 1, 1798 AREMARK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Bøenødegård 22, 1798 AREMARK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Bøenødegård 36, 1798 AREMARK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3201",
+      "name": "Bærum",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Rådhustorget 2 Sandvika"
+        }
+      ],
+      "sampleAddress": "Rådhustorget 2 Sandvika",
+      "events": 10
+    },
+    {
+      "number": "3203",
+      "name": "Asker",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Bjerkøy vei 11A, 1392 VETTRE"
+        }
+      ],
+      "sampleAddress": "Søndre Bjerkøy vei 11A, 1392 VETTRE",
+      "events": 6
+    },
+    {
+      "number": "3205",
+      "name": "Lillestrøm",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Brånås, Brånåsveien 11, 2019 SKEDSMOKORSET"
+        }
+      ],
+      "sampleAddress": "Søndre Brånås, Brånåsveien 11, 2019 SKEDSMOKORSET",
+      "events": 8
+    },
+    {
+      "number": "3207",
+      "name": "Nordre Follo",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3209",
+      "name": "Ullensaker",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Bjørke, Bjørke 108, 2067 JESSHEIM",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Bjørke, Bjørke 110, 2067 JESSHEIM"
+        }
+      ],
+      "sampleAddress": "Søndre Bjørke, Bjørke 110, 2067 JESSHEIM",
+      "events": 8
+    },
+    {
+      "number": "3212",
+      "name": "Nesodden",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3214",
+      "name": "Frogn",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3216",
+      "name": "Vestby",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Bylterud, Rokkerveien 28, 1544 VESTBY"
+        }
+      ],
+      "sampleAddress": "Søndre Bylterud, Rokkerveien 28, 1544 VESTBY",
+      "events": 9
+    },
+    {
+      "number": "3218",
+      "name": "Ås",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3220",
+      "name": "Enebakk",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Dæli, Lillestrømveien 964, 1912 ENEBAKK"
+        }
+      ],
+      "sampleAddress": "Søndre Dæli, Lillestrømveien 964, 1912 ENEBAKK",
+      "events": 8
+    },
+    {
+      "number": "3222",
+      "name": "Lørenskog",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sønnaveien 1, 1476 RASTA"
+        }
+      ],
+      "sampleAddress": "Sønnaveien 1, 1476 RASTA",
+      "events": 8
+    },
+    {
+      "number": "3224",
+      "name": "Rælingen",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Smestad 1, 2008 FJERDINGBY",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Smestad 10, 2008 FJERDINGBY",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Smestad 11, 2008 FJERDINGBY",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3226",
+      "name": "Aurskog-Høland",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Auten, Autenveien 168, 1960 LØKEN"
+        }
+      ],
+      "sampleAddress": "Søndre Auten, Autenveien 168, 1960 LØKEN",
+      "events": 8
+    },
+    {
+      "number": "3228",
+      "name": "Nes",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Fallet, Sjølivegen 672, 2164 SKOGBYGDA"
+        }
+      ],
+      "sampleAddress": "Søndre Fallet, Sjølivegen 672, 2164 SKOGBYGDA",
+      "events": 8
+    },
+    {
+      "number": "3230",
+      "name": "Gjerdrum",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Rogstad, Rogstadvegen 11, 2022 GJERDRUM"
+        }
+      ],
+      "sampleAddress": "Søndre Rogstad, Rogstadvegen 11, 2022 GJERDRUM",
+      "events": 8
+    },
+    {
+      "number": "3232",
+      "name": "Nittedal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørfaret 2, 1484 HAKADAL"
+        }
+      ],
+      "sampleAddress": "Sørfaret 2, 1484 HAKADAL",
+      "events": 8
+    },
+    {
+      "number": "3234",
+      "name": "Lunner",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3236",
+      "name": "Jevnaker",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3238",
+      "name": "Nannestad",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørlivegen 1, 2032 MAURA"
+        }
+      ],
+      "sampleAddress": "Sørlivegen 1, 2032 MAURA",
+      "events": 8
+    },
+    {
+      "number": "3240",
+      "name": "Eidsvoll",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sømofaret 10, 2072 DAL"
+        }
+      ],
+      "sampleAddress": "Sømofaret 10, 2072 DAL",
+      "events": 8
+    },
+    {
+      "number": "3242",
+      "name": "Hurdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Knai, Vestsidevegen 49, 2090 HURDAL"
+        }
+      ],
+      "sampleAddress": "Søndre Knai, Vestsidevegen 49, 2090 HURDAL",
+      "events": 8
+    },
+    {
+      "number": "3301",
+      "name": "Drammen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3303",
+      "name": "Kongsberg",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvposten 10, 3612 KONGSBERG"
+        }
+      ],
+      "sampleAddress": "Sølvposten 10, 3612 KONGSBERG",
+      "events": 10
+    },
+    {
+      "number": "3305",
+      "name": "Ringerike",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3310",
+      "name": "Hole",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3312",
+      "name": "Lier",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3314",
+      "name": "Øvre Eiker",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3316",
+      "name": "Modum",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3318",
+      "name": "Krødsherad",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3320",
+      "name": "Flå",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3322",
+      "name": "Nesbyen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3324",
+      "name": "Gol",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3326",
+      "name": "Hemsedal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3328",
+      "name": "Ål",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3330",
+      "name": "Hol",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3332",
+      "name": "Sigdal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3334",
+      "name": "Flesberg",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sølvsetervegen 40, 3622 SVENE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sølvsetervegen 54, 3622 SVENE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sølvsetervegen 59, 3622 SVENE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3336",
+      "name": "Rollag",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Bjørge, Rollagsvegen 116, 3626 ROLLAG",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Bjørge, Rollagsvegen 118, 3626 ROLLAG"
+        }
+      ],
+      "sampleAddress": "Søre Bjørge, Rollagsvegen 118, 3626 ROLLAG",
+      "events": 8
+    },
+    {
+      "number": "3338",
+      "name": "Nore og Uvdal",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sølandsåvegen 449, 3629 NORE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sølandsåvegen 516, 3629 NORE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sølandsåvegen 569, 3629 NORE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3401",
+      "name": "Kongsvinger",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Hærsjøveg 101, 2224 AUSTMARKA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Hærsjøveg 103, 2224 AUSTMARKA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Hærsjøveg 115, 2224 AUSTMARKA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3403",
+      "name": "Hamar",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvvegen 1, 2322 RIDABU"
+        }
+      ],
+      "sampleAddress": "Sølvvegen 1, 2322 RIDABU",
+      "events": 10
+    },
+    {
+      "number": "3405",
+      "name": "Lillehammer",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Åsmarkvegen 111 Lillehammer"
+        }
+      ],
+      "sampleAddress": "Åsmarkvegen 111 Lillehammer",
+      "events": 9
+    },
+    {
+      "number": "3407",
+      "name": "Gjøvik",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Sanghaugveg 2, 2838 SNERTINGDAL"
+        }
+      ],
+      "sampleAddress": "Søndre Sanghaugveg 2, 2838 SNERTINGDAL",
+      "events": 10
+    },
+    {
+      "number": "3411",
+      "name": "Ringsaker",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Røset, Røsetgutua 13, 2320 FURNES"
+        }
+      ],
+      "sampleAddress": "Søndre Røset, Røsetgutua 13, 2320 FURNES",
+      "events": 10
+    },
+    {
+      "number": "3412",
+      "name": "Løten",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Enge, Rokosjøvegen 128, 2340 LØTEN"
+        }
+      ],
+      "sampleAddress": "Søndre Enge, Rokosjøvegen 128, 2340 LØTEN",
+      "events": 10
+    },
+    {
+      "number": "3413",
+      "name": "Stange",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Amundrud, Odalsvegen 176, 2330 VALLSET"
+        }
+      ],
+      "sampleAddress": "Søndre Amundrud, Odalsvegen 176, 2330 VALLSET",
+      "events": 10
+    },
+    {
+      "number": "3414",
+      "name": "Nord-Odal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Helgedagsrud, Nord-Odalsvegen 820, 2120 SAGSTUA"
+        }
+      ],
+      "sampleAddress": "Søndre Helgedagsrud, Nord-Odalsvegen 820, 2120 SAGSTUA",
+      "events": 9
+    },
+    {
+      "number": "3415",
+      "name": "Sør-Odal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Disen, Norddisivegen 23, 2114 DISENÅ"
+        }
+      ],
+      "sampleAddress": "Søndre Disen, Norddisivegen 23, 2114 DISENÅ",
+      "events": 9
+    },
+    {
+      "number": "3416",
+      "name": "Eidskog",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Eidet, Helgesjøvegen 19, 2233 VESTMARKA"
+        }
+      ],
+      "sampleAddress": "Søndre Eidet, Helgesjøvegen 19, 2233 VESTMARKA",
+      "events": 2
+    },
+    {
+      "number": "3417",
+      "name": "Grue",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3418",
+      "name": "Åsnes",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3419",
+      "name": "Våler",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3420",
+      "name": "Elverum",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Bergeberget 100, 2410 HERNES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Bergeberget 102A, 2410 HERNES"
+        }
+      ],
+      "sampleAddress": "Søndre Bergeberget 102A, 2410 HERNES",
+      "events": 10
+    },
+    {
+      "number": "3421",
+      "name": "Trysil",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Ifarneset, Osensjøen øst 547, 2428 SØRE OSEN"
+        }
+      ],
+      "sampleAddress": "Søndre Ifarneset, Osensjøen øst 547, 2428 SØRE OSEN",
+      "events": 10
+    },
+    {
+      "number": "3422",
+      "name": "Åmot",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Aaset, Vestre Åbuveien 46, 2450 RENA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Aaset, Vestre Åbuveien 48, 2450 RENA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Aaset, Vestre Åbuveien 50, 2450 RENA"
+        }
+      ],
+      "sampleAddress": "Søndre Aaset, Vestre Åbuveien 50, 2450 RENA",
+      "events": 9
+    },
+    {
+      "number": "3423",
+      "name": "Stor-Elvdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Bakken, Lykkjeveien 44, 2480 KOPPANG"
+        }
+      ],
+      "sampleAddress": "Søndre Bakken, Lykkjeveien 44, 2480 KOPPANG",
+      "events": 9
+    },
+    {
+      "number": "3424",
+      "name": "Rendalen",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Sølendalsveien 10, 2484 RENDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Sølendalsveien 1010, 2484 RENDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Sølendalsveien 1012, 2484 RENDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3425",
+      "name": "Engerdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sømåhaugen, Kopparleden 4557, 2448 SØMÅDALEN"
+        }
+      ],
+      "sampleAddress": "Sømåhaugen, Kopparleden 4557, 2448 SØMÅDALEN",
+      "events": 9
+    },
+    {
+      "number": "3426",
+      "name": "Tolga",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Gammevollen 17, 2544 ØVERSJØDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Gammevollen 27, 2544 ØVERSJØDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Gammevollen 29, 2544 ØVERSJØDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3427",
+      "name": "Tynset",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Fåsetbrua, Nord-Østerdalsveien 6983, 2500 TYNSET",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Fåsetbrua, Nord-Østerdalsveien 6985, 2500 TYNSET"
+        }
+      ],
+      "sampleAddress": "Søndre Fåsetbrua, Nord-Østerdalsveien 6985, 2500 TYNSET",
+      "events": 9
+    },
+    {
+      "number": "3428",
+      "name": "Alvdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølndalsveien 101, 2560 ALVDAL"
+        }
+      ],
+      "sampleAddress": "Sølndalsveien 101, 2560 ALVDAL",
+      "events": 9
+    },
+    {
+      "number": "3429",
+      "name": "Folldal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Uppistugu Dalen, Dalgardsvegen 272, 2584 DALHOLEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Uppistugu Dalen, Dalgardsvegen 274, 2584 DALHOLEN"
+        }
+      ],
+      "sampleAddress": "Søre Uppistugu Dalen, Dalgardsvegen 274, 2584 DALHOLEN",
+      "events": 9
+    },
+    {
+      "number": "3430",
+      "name": "Os",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søljåsen 191, 2550 OS I ØSTERDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søljåsen 194, 2550 OS I ØSTERDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søljåsen 198, 2550 OS I ØSTERDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3431",
+      "name": "Dovre",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Engelshus, Solsidevegen 760, 2662 DOVRE"
+        }
+      ],
+      "sampleAddress": "Søre Engelshus, Solsidevegen 760, 2662 DOVRE",
+      "events": 6
+    },
+    {
+      "number": "3432",
+      "name": "Lesja",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tandevegen 100, 2665 LESJA"
+        }
+      ],
+      "sampleAddress": "Tandevegen 100, 2665 LESJA",
+      "events": 6
+    },
+    {
+      "number": "3433",
+      "name": "Skjåk",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Tomt 19, Krosshøvegen 67, 2695 GROTLI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tomt 44, Kjerringhøvegen 25, 2695 GROTLI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tomt 53, Bellingsdalsvegen 42, 2690 SKJÅK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3434",
+      "name": "Lom",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Tannklinikken, Krokamyrvegen 18C, 2686 LOM",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tessvegen 275, 2683 TESSANDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tessvegen 411, 2683 TESSANDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3435",
+      "name": "Vågå",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Langskåre 1, 2680 VÅGÅ"
+        }
+      ],
+      "sampleAddress": "Søre Langskåre 1, 2680 VÅGÅ",
+      "events": 8
+    },
+    {
+      "number": "3436",
+      "name": "Nord-Fron",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Byrlykkja, Byrlykkjevegen 82, 2640 VINSTRA"
+        }
+      ],
+      "sampleAddress": "Søre Byrlykkja, Byrlykkjevegen 82, 2640 VINSTRA",
+      "events": 8
+    },
+    {
+      "number": "3437",
+      "name": "Sel",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Endrestad, Sjoavegen 175, 2670 OTTA"
+        }
+      ],
+      "sampleAddress": "Søre Endrestad, Sjoavegen 175, 2670 OTTA",
+      "events": 8
+    },
+    {
+      "number": "3438",
+      "name": "Sør-Fron",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sønstelivegen 108, 2647 SØR-FRON"
+        }
+      ],
+      "sampleAddress": "Sønstelivegen 108, 2647 SØR-FRON",
+      "events": 9
+    },
+    {
+      "number": "3439",
+      "name": "Ringebu",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Breitjønnet 1, 2630 RINGEBU",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Goppollvegen 128, 2634 FÅVANG"
+        }
+      ],
+      "sampleAddress": "Søre Goppollvegen 128, 2634 FÅVANG",
+      "events": 9
+    },
+    {
+      "number": "3440",
+      "name": "Øyer",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sør-Trettenvegen 1, 2635 TRETTEN"
+        }
+      ],
+      "sampleAddress": "Sør-Trettenvegen 1, 2635 TRETTEN",
+      "events": 7
+    },
+    {
+      "number": "3441",
+      "name": "Gausdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørjordet 10, 2652 SVINGVOLL"
+        }
+      ],
+      "sampleAddress": "Sørjordet 10, 2652 SVINGVOLL",
+      "events": 9
+    },
+    {
+      "number": "3442",
+      "name": "Østre Toten",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sønderhombsvegen 1, 2850 LENA"
+        }
+      ],
+      "sampleAddress": "Sønderhombsvegen 1, 2850 LENA",
+      "events": 10
+    },
+    {
+      "number": "3443",
+      "name": "Vestre Toten",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sønstebyvegen 1, 2843 EINA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sønstebyvegen 152, 2843 EINA"
+        }
+      ],
+      "sampleAddress": "Sønstebyvegen 152, 2843 EINA",
+      "events": 10
+    },
+    {
+      "number": "3446",
+      "name": "Gran",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "3447",
+      "name": "Søndre Land",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvhaugvegen 1, 2860 HOV"
+        }
+      ],
+      "sampleAddress": "Sølvhaugvegen 1, 2860 HOV",
+      "events": 10
+    },
+    {
+      "number": "3448",
+      "name": "Nordre Land",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Sveomstræta 1, 2880 NORD-TORPA"
+        }
+      ],
+      "sampleAddress": "Søndre Sveomstræta 1, 2880 NORD-TORPA",
+      "events": 10
+    },
+    {
+      "number": "3449",
+      "name": "Sør-Aurdal",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søljulivegen 15, 2930 BAGN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søljulivegen 16, 2930 BAGN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søljulivegen 17, 2930 BAGN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3450",
+      "name": "Etnedal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søre Bruflatjordet 1, 2890 ETNEDAL"
+        }
+      ],
+      "sampleAddress": "Søre Bruflatjordet 1, 2890 ETNEDAL",
+      "events": 6
+    },
+    {
+      "number": "3451",
+      "name": "Nord-Aurdal",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søreistølvegen 11, 2933 REINLI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søreistølvegen 13, 2933 REINLI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søreistølvegen 15, 2933 REINLI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3452",
+      "name": "Vestre Slidre",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørre Robølsvegen 11, 2973 RYFOSS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørre Robølsvegen 17, 2973 RYFOSS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørre Robølsvegen 21, 2973 RYFOSS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3453",
+      "name": "Øystre Slidre",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørre Grønekinnvegen 1, 2953 BEITOSTØLEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørre Grønekinnvegen 10, 2953 BEITOSTØLEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørre Grønekinnvegen 11, 2953 BEITOSTØLEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3454",
+      "name": "Vang",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørre Skakadalsvegen 115, 2975 VANG I VALDRES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørre Skakadalsvegen 230, 2975 VANG I VALDRES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørre Skakadalsvegen 415, 2975 VANG I VALDRES",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3901",
+      "name": "Horten",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvkroneveien 11, 3189 HORTEN"
+        }
+      ],
+      "sampleAddress": "Sølvkroneveien 11, 3189 HORTEN",
+      "events": 10
+    },
+    {
+      "number": "3903",
+      "name": "Holmestrand",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Fjellskar 1, 3073 SANDE I VESTFOLD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Fjellskar 2, 3073 SANDE I VESTFOLD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Fjellskar 3, 3073 SANDE I VESTFOLD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3905",
+      "name": "Tønsberg",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvfaksveien 1, 3122 TØNSBERG"
+        }
+      ],
+      "sampleAddress": "Sølvfaksveien 1, 3122 TØNSBERG",
+      "events": 10
+    },
+    {
+      "number": "3907",
+      "name": "Sandefjord",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søebergs gate 1, 3211 SANDEFJORD"
+        }
+      ],
+      "sampleAddress": "Søebergs gate 1, 3211 SANDEFJORD",
+      "events": 10
+    },
+    {
+      "number": "3909",
+      "name": "Larvik",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sølvstråveien 42, 3261 LARVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sølvstråveien 44, 3261 LARVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndersrødsvingen 1, 3295 HELGEROA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "3911",
+      "name": "Færder",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Brydeholmen 1, 3144 VEIERLAND",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Løkkevei 1, 3120 NØTTERØY"
+        }
+      ],
+      "sampleAddress": "Søndre Løkkevei 1, 3120 NØTTERØY",
+      "events": 11
+    },
+    {
+      "number": "4001",
+      "name": "Porsgrunn",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvivegen 1, 3940 PORSGRUNN"
+        }
+      ],
+      "sampleAddress": "Sølvivegen 1, 3940 PORSGRUNN",
+      "events": 8
+    },
+    {
+      "number": "4003",
+      "name": "Skien",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Falkumveg 1, 3725 SKIEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Falkumveg 10, 3725 SKIEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Falkumveg 11, 3725 SKIEN"
+        }
+      ],
+      "sampleAddress": "Søndre Falkumveg 11, 3725 SKIEN",
+      "events": 10
+    },
+    {
+      "number": "4005",
+      "name": "Notodden",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sølvestjønnvegen 27, 3677 NOTODDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sølvestjønnvegen 29, 3677 NOTODDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sølvestjønnvegen 30, 3677 NOTODDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4010",
+      "name": "Siljan",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Thorshaugvegen 2, 3748 SILJAN"
+        }
+      ],
+      "sampleAddress": "Thorshaugvegen 2, 3748 SILJAN",
+      "events": 10
+    },
+    {
+      "number": "4012",
+      "name": "Bamble",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Kjønnøyavei 10, 3967 STATHELLE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Kjønnøyavei 12, 3967 STATHELLE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Kjønnøyavei 14, 3967 STATHELLE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4014",
+      "name": "Kragerø",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Bærøyveien 1, 3783 KRAGERØ SKJÆRGÅRD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Bærøyveien 10, 3783 KRAGERØ SKJÆRGÅRD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Bærøyveien 11, 3783 KRAGERØ SKJÆRGÅRD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4016",
+      "name": "Drangedal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Havna 1, 3760 NESLANDSVATN"
+        }
+      ],
+      "sampleAddress": "Søndre Havna 1, 3760 NESLANDSVATN",
+      "events": 10
+    },
+    {
+      "number": "4018",
+      "name": "Nome",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søvedalen 12, 3830 ULEFOSS"
+        }
+      ],
+      "sampleAddress": "Søvedalen 12, 3830 ULEFOSS",
+      "events": 10
+    },
+    {
+      "number": "4020",
+      "name": "Midt-Telemark",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Vestsidaveg 808, 3812 AKKERHAUGEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sønstebøvegen 21, 3803 BØ I TELEMARK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sønstebøvegen 40, 3803 BØ I TELEMARK"
+        }
+      ],
+      "sampleAddress": "Sønstebøvegen 40, 3803 BØ I TELEMARK",
+      "events": 10
+    },
+    {
+      "number": "4022",
+      "name": "Seljord",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Kvambekk 100, 3844 ÅMOTSDAL"
+        }
+      ],
+      "sampleAddress": "Søndre Kvambekk 100, 3844 ÅMOTSDAL",
+      "events": 14
+    },
+    {
+      "number": "4024",
+      "name": "Hjartdal",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Tjønnstul 1, 3697 TUDDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjønnstul 101, 3697 TUDDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjønnstul 103, 3697 TUDDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4026",
+      "name": "Tinn",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4028",
+      "name": "Kviteseid",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tegelverkvegen 1, 3850 KVITESEID"
+        }
+      ],
+      "sampleAddress": "Tegelverkvegen 1, 3850 KVITESEID",
+      "events": 14
+    },
+    {
+      "number": "4030",
+      "name": "Nissedal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tjønnefoss 104, 3855 TREUNGEN"
+        }
+      ],
+      "sampleAddress": "Tjønnefoss 104, 3855 TREUNGEN",
+      "events": 2
+    },
+    {
+      "number": "4032",
+      "name": "Fyresdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Taraldlivegen 203, 3870 FYRESDAL"
+        }
+      ],
+      "sampleAddress": "Taraldlivegen 203, 3870 FYRESDAL",
+      "events": 14
+    },
+    {
+      "number": "4034",
+      "name": "Tokke",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Talleiv Huvestads veg 108, 3880 DALEN"
+        }
+      ],
+      "sampleAddress": "Talleiv Huvestads veg 108, 3880 DALEN",
+      "events": 14
+    },
+    {
+      "number": "4036",
+      "name": "Vinje",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Grasbekkveg 101, 3890 VINJE"
+        }
+      ],
+      "sampleAddress": "Søndre Grasbekkveg 101, 3890 VINJE",
+      "events": 14
+    },
+    {
+      "number": "4201",
+      "name": "Risør",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndeledmyr 35, 4990 SØNDELED"
+        }
+      ],
+      "sampleAddress": "Søndeledmyr 35, 4990 SØNDELED",
+      "events": 10
+    },
+    {
+      "number": "4202",
+      "name": "Grimstad",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sømsveien 1, 4870 FEVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sømsveien 10, 4870 FEVIK"
+        }
+      ],
+      "sampleAddress": "Sømsveien 10, 4870 FEVIK",
+      "events": 12
+    },
+    {
+      "number": "4203",
+      "name": "Arendal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvfaksveien 11, 4818 FÆRVIK"
+        }
+      ],
+      "sampleAddress": "Sølvfaksveien 11, 4818 FÆRVIK",
+      "events": 11
+    },
+    {
+      "number": "4204",
+      "name": "Kristiansand",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4205",
+      "name": "Lindesnes",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvbergveien 1, 4520 LINDESNES"
+        }
+      ],
+      "sampleAddress": "Sølvbergveien 1, 4520 LINDESNES",
+      "events": 9
+    },
+    {
+      "number": "4206",
+      "name": "Farsund",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre vei 106, 4560 VANSE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre vei 108, 4560 VANSE"
+        }
+      ],
+      "sampleAddress": "Søndre vei 108, 4560 VANSE",
+      "events": 7
+    },
+    {
+      "number": "4207",
+      "name": "Flekkefjord",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søylandsveien 10, 4404 FLEKKEFJORD"
+        }
+      ],
+      "sampleAddress": "Søylandsveien 10, 4404 FLEKKEFJORD",
+      "events": 10
+    },
+    {
+      "number": "4211",
+      "name": "Gjerstad",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tangen, Klokkargården 57, 4980 GJERSTAD"
+        }
+      ],
+      "sampleAddress": "Tangen, Klokkargården 57, 4980 GJERSTAD",
+      "events": 10
+    },
+    {
+      "number": "4212",
+      "name": "Vegårshei",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sønningheia 12, 4985 VEGÅRSHEI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sønningheia 14, 4985 VEGÅRSHEI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sønningheia 19, 4985 VEGÅRSHEI",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4213",
+      "name": "Tvedestrand",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Svabukta 38, 4916 BORØY",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Svabukta 40, 4916 BORØY",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Svabukta 42, 4916 BORØY",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4214",
+      "name": "Froland",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørkollen 1, 4820 FROLAND"
+        }
+      ],
+      "sampleAddress": "Sørkollen 1, 4820 FROLAND",
+      "events": 11
+    },
+    {
+      "number": "4215",
+      "name": "Lillesand",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Steindal, Steindalsveien 86, 4790 LILLESAND"
+        }
+      ],
+      "sampleAddress": "Søndre Steindal, Steindalsveien 86, 4790 LILLESAND",
+      "events": 9
+    },
+    {
+      "number": "4216",
+      "name": "Birkenes",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Tjønntveitveien 100, 4760 BIRKELAND",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjønntveitveien 102, 4760 BIRKELAND",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjønntveitveien 106, 4760 BIRKELAND",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4217",
+      "name": "Åmli",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tveit 174, 4865 ÅMLI"
+        }
+      ],
+      "sampleAddress": "Tveit 174, 4865 ÅMLI",
+      "events": 10
+    },
+    {
+      "number": "4218",
+      "name": "Iveland",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tellhaugane 10, 4724 IVELAND"
+        }
+      ],
+      "sampleAddress": "Tellhaugane 10, 4724 IVELAND",
+      "events": 10
+    },
+    {
+      "number": "4219",
+      "name": "Evje og Hornnes",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Taubanegata 11, 4735 EVJE"
+        }
+      ],
+      "sampleAddress": "Taubanegata 11, 4735 EVJE",
+      "events": 10
+    },
+    {
+      "number": "4220",
+      "name": "Bygland",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tangenvegen 121, 4745 BYGLAND",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tangenvegen 14, 4745 BYGLAND"
+        }
+      ],
+      "sampleAddress": "Tangenvegen 14, 4745 BYGLAND",
+      "events": 10
+    },
+    {
+      "number": "4221",
+      "name": "Valle",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tveitebøvegen 107, 4747 VALLE"
+        }
+      ],
+      "sampleAddress": "Tveitebøvegen 107, 4747 VALLE",
+      "events": 10
+    },
+    {
+      "number": "4222",
+      "name": "Bykle",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Tjønnlii 2, 4754 BYKLE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjønnlii 4, 4754 BYKLE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjønnlii 6, 4754 BYKLE",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4223",
+      "name": "Vennesla",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4224",
+      "name": "Åseral",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søteheivegen 249, 4544 FOSSDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Takhomtjønnvegen 1, 4540 ÅSERAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Takhomtjønnvegen 11, 4540 ÅSERAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4225",
+      "name": "Lyngdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvbergveien 1, 4580 LYNGDAL"
+        }
+      ],
+      "sampleAddress": "Sølvbergveien 1, 4580 LYNGDAL",
+      "events": 10
+    },
+    {
+      "number": "4226",
+      "name": "Hægebostad",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tollebakkveien 1, 4595 TINGVATN"
+        }
+      ],
+      "sampleAddress": "Tollebakkveien 1, 4595 TINGVATN",
+      "events": 10
+    },
+    {
+      "number": "4227",
+      "name": "Kvinesdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørhelleveien 116, 4480 KVINESDAL"
+        }
+      ],
+      "sampleAddress": "Sørhelleveien 116, 4480 KVINESDAL",
+      "events": 10
+    },
+    {
+      "number": "4228",
+      "name": "Sirdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvbekken 1, 4440 TONSTAD"
+        }
+      ],
+      "sampleAddress": "Sølvbekken 1, 4440 TONSTAD",
+      "events": 10
+    },
+    {
+      "number": "4601",
+      "name": "Bergen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4602",
+      "name": "Kinn",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4611",
+      "name": "Etne",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4612",
+      "name": "Sveio",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4613",
+      "name": "Bømlo",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4614",
+      "name": "Stord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4615",
+      "name": "Fitjar",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4616",
+      "name": "Tysnes",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4617",
+      "name": "Kvinnherad",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4618",
+      "name": "Ullensvang",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Teigen, Ullensvangvegen 2663, 5770 TYSSEDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjoadalen 10, 5750 ODDA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tjoadalen 11, 5750 ODDA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4619",
+      "name": "Eidfjord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4620",
+      "name": "Ulvik",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4621",
+      "name": "Voss",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4622",
+      "name": "Kvam",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4623",
+      "name": "Samnanger",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4624",
+      "name": "Bjørnafjorden",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4625",
+      "name": "Austevoll",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4626",
+      "name": "Øygarden",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søra Gjerdet 2, 5366 MISJE"
+        }
+      ],
+      "sampleAddress": "Søra Gjerdet 2, 5366 MISJE",
+      "events": 10
+    },
+    {
+      "number": "4627",
+      "name": "Askøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4628",
+      "name": "Vaksdal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4629",
+      "name": "Modalen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4630",
+      "name": "Osterøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4631",
+      "name": "Alver",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4632",
+      "name": "Austrheim",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4633",
+      "name": "Fedje",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4634",
+      "name": "Masfjorden",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4635",
+      "name": "Gulen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4636",
+      "name": "Solund",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4637",
+      "name": "Hyllestad",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4638",
+      "name": "Høyanger",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørebøvegen 307, 5962 BJORDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørebøvegen 358, 5962 BJORDAL"
+        }
+      ],
+      "sampleAddress": "Sørebøvegen 358, 5962 BJORDAL",
+      "events": 9
+    },
+    {
+      "number": "4639",
+      "name": "Vik",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søre Skjelingen 1, 6893 VIK I SOGN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Skjelingen 10, 6893 VIK I SOGN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Skjelingen 11, 6893 VIK I SOGN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4640",
+      "name": "Sogndal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tistelteigen 1, 6854 KAUPANGER"
+        }
+      ],
+      "sampleAddress": "Tistelteigen 1, 6854 KAUPANGER",
+      "events": 10
+    },
+    {
+      "number": "4641",
+      "name": "Aurland",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Teravegen 1, 5745 AURLAND"
+        }
+      ],
+      "sampleAddress": "Teravegen 1, 5745 AURLAND",
+      "events": 8
+    },
+    {
+      "number": "4642",
+      "name": "Lærdal",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Telthusvegen 10, 6887 LÆRDAL"
+        }
+      ],
+      "sampleAddress": "Telthusvegen 10, 6887 LÆRDAL",
+      "events": 10
+    },
+    {
+      "number": "4643",
+      "name": "Årdal",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søre Knipvegen 100, 6884 ØVRE ÅRDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Knipvegen 101, 6884 ØVRE ÅRDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søre Knipvegen 109, 6884 ØVRE ÅRDAL",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4644",
+      "name": "Luster",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørsidevegen 1012, 6876 SKJOLDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørsidevegen 1016, 6876 SKJOLDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørsidevegen 1025, 6876 SKJOLDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "4645",
+      "name": "Askvoll",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4646",
+      "name": "Fjaler",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4647",
+      "name": "Sunnfjord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4648",
+      "name": "Bremanger",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4649",
+      "name": "Stad",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4650",
+      "name": "Gloppen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "4651",
+      "name": "Stryn",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5001",
+      "name": "Trondheim",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5006",
+      "name": "Steinkjer",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølbergsvegen 11, 7710 SPARBU"
+        }
+      ],
+      "sampleAddress": "Sølbergsvegen 11, 7710 SPARBU",
+      "events": 8
+    },
+    {
+      "number": "5007",
+      "name": "Namsos",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Mork, Settersvegen 117, 7750 NAMDALSEID",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Mork, Settersvegen 119, 7750 NAMDALSEID"
+        }
+      ],
+      "sampleAddress": "Søndre Mork, Settersvegen 119, 7750 NAMDALSEID",
+      "events": 8
+    },
+    {
+      "number": "5014",
+      "name": "Frøya",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5020",
+      "name": "Osen",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørgjerd 1, 7740 STEINSDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørgjerd 2, 7740 STEINSDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørmelan 1, 7740 STEINSDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5021",
+      "name": "Oppdal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5022",
+      "name": "Rennebu",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5025",
+      "name": "Røros",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Vintervollveien 10, 7372 GLÅMOS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Vintervollveien 12, 7372 GLÅMOS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Vintervollveien 14, 7372 GLÅMOS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5026",
+      "name": "Holtålen",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Vervegen 132, 7380 ÅLEN"
+        }
+      ],
+      "sampleAddress": "Vervegen 132, 7380 ÅLEN",
+      "events": 9
+    },
+    {
+      "number": "5027",
+      "name": "Midtre Gauldal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5028",
+      "name": "Melhus",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5029",
+      "name": "Skaun",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5031",
+      "name": "Malvik",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5032",
+      "name": "Selbu",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5033",
+      "name": "Tydal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5034",
+      "name": "Meråker",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5035",
+      "name": "Stjørdal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5036",
+      "name": "Frosta",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5037",
+      "name": "Levanger",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5038",
+      "name": "Verdal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5041",
+      "name": "Snåsa",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Jørstad, Sørsivegen 976, 7760 SNÅSA"
+        }
+      ],
+      "sampleAddress": "Søndre Jørstad, Sørsivegen 976, 7760 SNÅSA",
+      "events": 8
+    },
+    {
+      "number": "5042",
+      "name": "Lierne",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørgården, Sandsjøveien 59, 7882 NORDLI"
+        }
+      ],
+      "sampleAddress": "Sørgården, Sandsjøveien 59, 7882 NORDLI",
+      "events": 8
+    },
+    {
+      "number": "5043",
+      "name": "Røyrvik",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørsundveien 296, 7898 LIMINGEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørsundveien 304, 7898 LIMINGEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørsundveien 31, 7898 LIMINGEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5044",
+      "name": "Namsskogan",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Telttjønnveien 376, 7890 NAMSSKOGAN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tromsdalshytta, Brekkaveien 244, 7890 NAMSSKOGAN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tromsstad, Namsskoganveien 3198, 7892 TRONES"
+        }
+      ],
+      "sampleAddress": "Tromsstad, Namsskoganveien 3198, 7892 TRONES",
+      "events": 8
+    },
+    {
+      "number": "5045",
+      "name": "Grong",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørsivegen 3734, 7870 GRONG"
+        }
+      ],
+      "sampleAddress": "Sørsivegen 3734, 7870 GRONG",
+      "events": 8
+    },
+    {
+      "number": "5046",
+      "name": "Høylandet",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørsidvegen 10, 7877 HØYLANDET",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørsidvegen 148, 7877 HØYLANDET"
+        }
+      ],
+      "sampleAddress": "Sørsidvegen 148, 7877 HØYLANDET",
+      "events": 8
+    },
+    {
+      "number": "5047",
+      "name": "Overhalla",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørhøyvegen 101, 7860 SKAGE I NAMDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørhøyvegen 103, 7860 SKAGE I NAMDALEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørhøyvegen 105, 7860 SKAGE I NAMDALEN"
+        }
+      ],
+      "sampleAddress": "Sørhøyvegen 105, 7860 SKAGE I NAMDALEN",
+      "events": 8
+    },
+    {
+      "number": "5049",
+      "name": "Flatanger",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørnessveien 1070, 7746 HASVÅG",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørnessveien 1086, 7746 HASVÅG",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørnessveien 1091, 7746 HASVÅG",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5052",
+      "name": "Leka",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tangaveien 137, 7994 LEKA"
+        }
+      ],
+      "sampleAddress": "Tangaveien 137, 7994 LEKA",
+      "events": 8
+    },
+    {
+      "number": "5053",
+      "name": "Inderøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5054",
+      "name": "Indre Fosen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5055",
+      "name": "Heim",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5056",
+      "name": "Hitra",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5057",
+      "name": "Ørland",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5058",
+      "name": "Åfjord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5059",
+      "name": "Orkland",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5060",
+      "name": "Nærøysund",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sømliøya 1, 7990 NAUSTBUKTA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Fjær, Ramfjordvegen 216, 7970 KOLVEREID",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Heller, Årsetvegen 1272, 7990 NAUSTBUKTA",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5061",
+      "name": "Rindal",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5501",
+      "name": "Tromsø",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Storgata 94B Tromsø"
+        }
+      ],
+      "sampleAddress": "Storgata 94B Tromsø",
+      "events": 4
+    },
+    {
+      "number": "5503",
+      "name": "Harstad",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørliveien 1, 9402 HARSTAD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørliveien 10, 9402 HARSTAD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørliveien 1013, 9402 HARSTAD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5510",
+      "name": "Kvæfjord",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørdalveien 569, 8409 GULLESFJORDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørdalveien 570, 8409 GULLESFJORDEN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Toppenveien 10, 9475 BORKENES"
+        }
+      ],
+      "sampleAddress": "Toppenveien 10, 9475 BORKENES",
+      "events": 10
+    },
+    {
+      "number": "5512",
+      "name": "Tjeldsund",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sør-Lavangen 100, 9440 EVENSKJER"
+        }
+      ],
+      "sampleAddress": "Sør-Lavangen 100, 9440 EVENSKJER",
+      "events": 10
+    },
+    {
+      "number": "5514",
+      "name": "Ibestad",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sør-Forsåveien 20, 9450 HAMNVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Forsåveien 25, 9450 HAMNVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Forsåveien 40, 9450 HAMNVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5516",
+      "name": "Gratangen",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Ytre Elvenes 1, 9470 GRATANGEN"
+        }
+      ],
+      "sampleAddress": "Ytre Elvenes 1, 9470 GRATANGEN",
+      "events": 10
+    },
+    {
+      "number": "5518",
+      "name": "Lavangen",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Fossbakk 10, 9357 TENNEVOLL"
+        }
+      ],
+      "sampleAddress": "Søndre Fossbakk 10, 9357 TENNEVOLL",
+      "events": 10
+    },
+    {
+      "number": "5520",
+      "name": "Bardu",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5522",
+      "name": "Salangen",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tverrveien 1, 9350 SJØVEGAN"
+        }
+      ],
+      "sampleAddress": "Tverrveien 1, 9350 SJØVEGAN",
+      "events": 6
+    },
+    {
+      "number": "5524",
+      "name": "Målselv",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sørhusveien 48, 9325 BARDUFOSS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørhusveien 75, 9325 BARDUFOSS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørhusveien 76, 9325 BARDUFOSS",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5526",
+      "name": "Sørreisa",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørfosbog Gård, Sørsiveien 607, 9310 SØRREISA"
+        }
+      ],
+      "sampleAddress": "Sørfosbog Gård, Sørsiveien 607, 9310 SØRREISA",
+      "events": 6
+    },
+    {
+      "number": "5528",
+      "name": "Dyrøy",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tverrveien 1, 9311 BRØSTADBOTN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tverrveien 10, 9311 BRØSTADBOTN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Tverrveien 14, 9311 BRØSTADBOTN"
+        }
+      ],
+      "sampleAddress": "Tverrveien 14, 9311 BRØSTADBOTN",
+      "events": 6
+    },
+    {
+      "number": "5530",
+      "name": "Senja",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Skarsvåg 14, 9372 GIBOSTAD"
+        }
+      ],
+      "sampleAddress": "Søndre Skarsvåg 14, 9372 GIBOSTAD",
+      "events": 6
+    },
+    {
+      "number": "5532",
+      "name": "Balsfjord",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørengveien 10, 9050 STORSTEINNES"
+        }
+      ],
+      "sampleAddress": "Sørengveien 10, 9050 STORSTEINNES",
+      "events": 6
+    },
+    {
+      "number": "5534",
+      "name": "Karlsøy",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tennvasslia 10 Hansnes"
+        }
+      ],
+      "sampleAddress": "Tennvasslia 10 Hansnes",
+      "events": 4
+    },
+    {
+      "number": "5536",
+      "name": "Lyngen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5538",
+      "name": "Storfjord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5540",
+      "name": "Kåfjord",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5542",
+      "name": "Skjervøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5544",
+      "name": "Nordreisa",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5546",
+      "name": "Kvænangen",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5601",
+      "name": "Alta",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sølvbunkeveien 1, 9516 ALTA"
+        }
+      ],
+      "sampleAddress": "Sølvbunkeveien 1, 9516 ALTA",
+      "events": 2
+    },
+    {
+      "number": "5603",
+      "name": "Hammerfest",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5605",
+      "name": "Sør-Varanger",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Taftesonveien 3, 9910 BJØRNEVATN"
+        }
+      ],
+      "sampleAddress": "Taftesonveien 3, 9910 BJØRNEVATN",
+      "events": 8
+    },
+    {
+      "number": "5607",
+      "name": "Vadsø",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Været 10, 9804 VADSØ",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Været 12, 9804 VADSØ",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Søndre Været 8, 9804 VADSØ",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5610",
+      "name": "Karasjok",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5612",
+      "name": "Kautokeino",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Vuolle-Máze 1, 9525 MAZE"
+        }
+      ],
+      "sampleAddress": "Vuolle-Máze 1, 9525 MAZE",
+      "events": 2
+    },
+    {
+      "number": "5614",
+      "name": "Loppa",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Sør-Tverrfjordveien 100, 9584 SØR-TVERRFJORD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Tverrfjordveien 108, 9584 SØR-TVERRFJORD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sør-Tverrfjordveien 110, 9584 SØR-TVERRFJORD",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5616",
+      "name": "Hasvik",
+      "listed": true,
+      "status": "no-dates-in-sample",
+      "attempts": [
+        {
+          "address": "Søndre Langkjeila 2, 9593 BREIVIKBOTN",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørbotn 10, 9590 HASVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        },
+        {
+          "address": "Sørbotn 6, 9590 HASVIK",
+          "error": "No collection dates found for this address in Min Renovasjon"
+        }
+      ]
+    },
+    {
+      "number": "5618",
+      "name": "Måsøy",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5620",
+      "name": "Nordkapp",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5622",
+      "name": "Porsanger",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tamsøyringen 1, 9700 LAKSELV"
+        }
+      ],
+      "sampleAddress": "Tamsøyringen 1, 9700 LAKSELV",
+      "events": 2
+    },
+    {
+      "number": "5624",
+      "name": "Lebesby",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5626",
+      "name": "Gamvik",
+      "listed": false,
+      "status": "not-listed",
+      "attempts": []
+    },
+    {
+      "number": "5628",
+      "name": "Tana",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Luftjok 105, 9842 TANA"
+        }
+      ],
+      "sampleAddress": "Søndre Luftjok 105, 9842 TANA",
+      "events": 8
+    },
+    {
+      "number": "5630",
+      "name": "Berlevåg",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndregate 1, 9980 BERLEVÅG"
+        }
+      ],
+      "sampleAddress": "Søndregate 1, 9980 BERLEVÅG",
+      "events": 8
+    },
+    {
+      "number": "5632",
+      "name": "Båtsfjord",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Sørlivegen 10, 9990 BÅTSFJORD"
+        }
+      ],
+      "sampleAddress": "Sørlivegen 10, 9990 BÅTSFJORD",
+      "events": 8
+    },
+    {
+      "number": "5634",
+      "name": "Vardø",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Søndre Berggate 1, 9950 VARDØ"
+        }
+      ],
+      "sampleAddress": "Søndre Berggate 1, 9950 VARDØ",
+      "events": 8
+    },
+    {
+      "number": "5636",
+      "name": "Nesseby",
+      "listed": true,
+      "status": "verified",
+      "attempts": [
+        {
+          "address": "Tangnesveien 10, 9840 VARANGERBOTN"
+        }
+      ],
+      "sampleAddress": "Tangnesveien 10, 9840 VARANGERBOTN",
+      "events": 4
+    }
+  ]
+}
