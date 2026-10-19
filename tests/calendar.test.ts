@@ -55,7 +55,7 @@ test("missing address query remains a 400", async () => {
   assert.equal(await response.text(), "Missing query parameter");
 });
 
-for (const municipality of ["3201", "3405", "0301"]) {
+for (const municipality of ["3201", "3405", "0301", "5501", "5534"]) {
   test(`looks up municipality ${municipality} nationwide and returns named, distinct calendar events`, async () => {
     await withFetch(upstream({ municipality }), async () => {
       const response = await request();

@@ -33,7 +33,7 @@ function verifyCalendar(calendar: string) {
   return ids.length;
 }
 
-for (const address of ["Rådhustorget 2 Sandvika", "Åsmarkvegen 111 Lillehammer"]) {
+for (const address of ["Rådhustorget 2 Sandvika", "Åsmarkvegen 111 Lillehammer", "Storgata 94B Tromsø", "Tennvasslia 10 Hansnes"]) {
   test(`live address lookup and calendar: ${address}`, { timeout: 90_000 }, async () => {
     const response = await worker.fetch("?q=" + encodeURIComponent(address));
     const calendar = await response.text();
@@ -42,14 +42,8 @@ for (const address of ["Rådhustorget 2 Sandvika", "Åsmarkvegen 111 Lillehammer
   });
 }
 
-test("live Remiks address returns a calendar or its explicit no-dates response", { timeout: 90_000 }, async () => {
+test("live address without collection dates returns an explicit error", { timeout: 90_000 }, async () => {
   const response = await worker.fetch("?q=" + encodeURIComponent("Storgata 1 Tromsø"));
-  const body = await response.text();
-  if (response.status === 200) {
-    console.log(`Storgata 1 Tromsø: ${verifyCalendar(body)} collection events`);
-  } else {
-    assert.equal(response.status, 400, body);
-    assert.equal(body, "Finner ingen tilgjengelige datoer for denne adressen.");
-    console.log("Storgata 1 Tromsø: Remiks explicitly returned no available dates; no live Remiks calendar verified");
-  }
+  assert.equal(response.status, 400);
+  assert.equal(await response.text(), "No collection dates found for this address in Min Renovasjon");
 });

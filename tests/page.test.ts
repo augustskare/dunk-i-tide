@@ -46,13 +46,20 @@ async function openPage() {
   let calls = 0;
   window.fetch = ((url: URL) => {
     calls++;
-    const response = worker.fetch(new URL(String(url)).search);
-    pending = response.then(async (value) => {
-      // Include response body consumption and the submit callback's microtasks.
-      await value.clone().text();
-    });
-    return response;
+    return worker.fetch(new URL(String(url)).search);
   }) as typeof window.fetch;
+  const form = window.document.querySelector("form")!;
+  const addEventListener = form.addEventListener.bind(form);
+  // Await the actual async submit listener, including response body consumption.
+  form.addEventListener = ((type, listener, options) => {
+    if (type === "submit" && typeof listener === "function") {
+      addEventListener(type, (event) => {
+        pending = Promise.resolve(listener.call(form, event));
+      }, options);
+    } else {
+      addEventListener(type, listener, options);
+    }
+  }) as typeof form.addEventListener;
   window.eval(window.document.querySelector("script")!.textContent);
   return {
     window,
@@ -60,8 +67,6 @@ async function openPage() {
       window.document.querySelector("input")!.value = value;
       window.document.querySelector("form")!.dispatchEvent(new window.Event("submit", { cancelable: true }));
       await pending;
-      // Let the async submit listener finish after response.text().
-      await new Promise((resolve) => setImmediate(resolve));
     },
     calls: () => calls,
   };

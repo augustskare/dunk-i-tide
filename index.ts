@@ -1,5 +1,5 @@
 import { createEvents, type DateTime } from "ics";
-import { addressLookup, fractionIds, getEvents } from "./remiks.ts";
+import { addressLookup } from "./address.ts";
 import { getNorkartEvents } from "./norkart.ts";
 import indexHtml from "./index.html";
 
@@ -28,13 +28,7 @@ export default {
         houseNumber: `${address.nummer}${address.bokstav ?? ""}`,
         munNumber: address.kommunenummer,
       };
-      const isRemiks = ["5501", "5534"].includes(address.kommunenummer);
-      const events = isRemiks
-        ? (await getEvents(collectionAddress)).map((event) => ({
-          ...event,
-          title: fractionIds.get(event.fraction) ?? "Ukjent",
-        }))
-        : await getNorkartEvents(collectionAddress);
+      const events = await getNorkartEvents(collectionAddress);
 
       const calendarEvents = createEvents(
         events.map(({ date, fraction, title }) => {
