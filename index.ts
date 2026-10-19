@@ -2,11 +2,19 @@ import { createEvents, type DateTime } from "ics";
 import { addressLookup } from "./address.ts";
 import { getNorkartEvents } from "./norkart.ts";
 import indexHtml from "./index.html";
+import coverageHtml from "./coverage.html";
+import coverageReport from "./docs/coverage.json";
 
 export default {
   async fetch(req) {
     try {
       const url = new URL(req.url);
+      if (url.pathname === "/coverage.json") return Response.json(coverageReport);
+      if (url.pathname === "/coverage") {
+        return new Response(coverageHtml, {
+          headers: { "Content-Type": "text/html; charset=utf-8" },
+        });
+      }
       if ((url.pathname === "/" || url.pathname === "/index.html") && !url.searchParams.has("q")) {
         return new Response(indexHtml, {
           headers: { "Content-Type": "text/html; charset=utf-8" },
@@ -38,12 +46,14 @@ export default {
             date.getDate(),
           ] as DateTime;
 
+          // RFC 5545: an all-day event's end is exclusive and later than start.
+          const nextDay = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
           return {
             calName: "Tømmekalender",
             uid: `${address.kommunenummer}-${address.adressekode}-${address.nummer}${address.bokstav ?? ""}-${fraction}-${date.getTime()}@tommekalender.no`,
             title,
             start: calDate,
-            end: calDate,
+            end: [nextDay.getFullYear(), nextDay.getMonth() + 1, nextDay.getDate()] as DateTime,
           };
         }),
       );

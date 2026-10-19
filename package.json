@@ -8,7 +8,8 @@
     "test:live": "node --use-env-proxy --test tests/live/calendar.ts",
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "audit:coverage": "node --use-env-proxy scripts/audit-coverage.ts"
   },
   "dependencies": {
     "ics": "^3.12.0",

@@ -27,6 +27,12 @@ function verifyCalendar(calendar: string) {
   assert.match(calendar, /BEGIN:VEVENT/);
   assert.match(calendar, /DTSTART;VALUE=DATE:\d{8}/);
   assert.match(calendar, /SUMMARY:.+/);
+  for (const event of calendar.split("BEGIN:VEVENT").slice(1)) {
+    const start = /^DTSTART;VALUE=DATE:(\d{8})/m.exec(event)![1];
+    const end = /^DTEND;VALUE=DATE:(\d{8})/m.exec(event)![1];
+    const expected = new Date(Date.UTC(Number(start.slice(0, 4)), Number(start.slice(4, 6)) - 1, Number(start.slice(6, 8)) + 1));
+    assert.equal(end, expected.toISOString().slice(0, 10).replaceAll("-", ""));
+  }
   const ids = [...calendar.matchAll(/^UID:(.+)$/gm)].map((match) => match[1]);
   assert.ok(ids.length > 0);
   assert.equal(new Set(ids).size, ids.length, "collection events must have unique UIDs");

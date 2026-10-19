@@ -17,7 +17,7 @@ async function withFetch(mock: typeof fetch, run: () => Promise<void>) {
   try { await run(); } finally { mockFetch = original; }
 }
 
-function upstream(options: { municipality?: string; empty?: boolean; invalidDate?: boolean; status?: number } = {}): typeof fetch {
+function upstream(options: { municipality?: string; date?: string; empty?: boolean; invalidDate?: boolean; status?: number } = {}): typeof fetch {
   return async (input, init) => {
     const url = new URL(String(input));
     if (url.hostname === "ws.geonorge.no") {
@@ -41,7 +41,7 @@ function upstream(options: { municipality?: string; empty?: boolean; invalidDate
     assert.equal(url.searchParams.get("husnr"), "2A");
     assert.equal(url.searchParams.get("gatekode"), "2469");
     return Response.json(options.empty ? [] : [
-      { FraksjonId: 1, Tommedatoer: [options.invalidDate ? "2027-02-30T00:00:00" : "2027-01-02T00:00:00"] },
+      { FraksjonId: 1, Tommedatoer: [options.invalidDate ? "2027-02-30T00:00:00" : options.date ?? "2027-01-02T00:00:00"] },
       { FraksjonId: 2, Tommedatoer: ["2027-01-02T00:00:00"] },
     ]);
   };
@@ -108,3 +108,20 @@ test("an address with no matches does not request collection data", async () => 
     assert.equal(calls, 1);
   });
 });
+
+for (const [date, start, end] of [
+  ["2027-01-02T00:00:00", "20270102", "20270103"],
+  ["2026-12-31T00:00:00", "20261231", "20270101"],
+  ["2028-02-29T00:00:00", "20280229", "20280301"],
+]) {
+  test(`all-day collection ${date} has an exclusive next-day end`, async () => {
+    await withFetch(upstream({ date }), async () => {
+      const response = await request();
+      assert.equal(response.status, 200);
+      const calendar = await response.text();
+      const event = calendar.split("BEGIN:VEVENT")[1];
+      assert.match(event, new RegExp(`DTSTART;VALUE=DATE:${start}`));
+      assert.match(event, new RegExp(`DTEND;VALUE=DATE:${end}`));
+    });
+  });
+}

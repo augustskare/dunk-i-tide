@@ -40,8 +40,8 @@ async function openPage() {
     },
   });
   // Evaluate the actual inline script once, after constructing its DOM.
-  // Happy DOM does not execute module scripts automatically.
-  window.document.write(await response.text());
+  // Make the script inert so Happy DOM cannot also schedule module evaluation.
+  window.document.write((await response.text()).replace('type="module"', 'type="application/x-test"'));
   let pending: Promise<unknown> = Promise.resolve();
   let calls = 0;
   window.fetch = ((url: URL) => {
