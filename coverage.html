@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kommunedekning – Dunk i tide</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+      body { max-width: 68rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
+      input, select { box-sizing: border-box; max-width: 100%; font: inherit; padding: .5rem; margin: .3rem 1rem .5rem 0; }
+      table { width: 100%; border-collapse: collapse; }
+      th, td { text-align: left; padding: .6rem; border-bottom: 1px solid #888; vertical-align: top; }
+      .table { overflow-x: auto; }
+      caption { text-align: left; margin: 1rem 0; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a href="/">Til adressesøk</a>
+      <h1>Kontrollert kommunedekning</h1>
+      <p>Vi henter tømmedatoer fra Min Renovasjon / Norkart. Tjenesten dekker ikke hele Norge.</p>
+      <p>En verifisert kalender betyr at en eksempeladresse ga navngitte hendelser med unike ID-er og minst én dato i dag eller fremover på kontrolldatoen. Andre adresser i samme kommune kan mangle datoer.</p>
+      <p>«Ikke i Norkarts register» betyr at kommunen ikke var oppført i leverandørens kommuneliste. Det er ikke en test av alle adresser. Adressesøket er fortsatt tilgjengelig for alle kommuner.</p>
+      <p id="summary" role="status">Henter dekningsrapport …</p>
+      <p><a href="/coverage.json" download="kommunedekning.json">Last ned hele rapporten med kilder og forsøkte adresser</a></p>
+      <label for="municipality">Finn kommune</label>
+      <input id="municipality" type="search" placeholder="Kommunenavn eller nummer">
+      <label for="coverage-status">Vis</label>
+      <select id="coverage-status">
+        <option value="all">Alle kommuner</option>
+        <option value="verified">Verifisert kalender</option>
+        <option value="unverified">Kalender ikke verifisert</option>
+        <option value="not-listed">Ikke i Norkarts register</option>
+      </select>
+      <div class="table">
+        <table>
+          <caption id="count"></caption>
+          <thead><tr><th>Kommune</th><th>Resultat</th><th>Eksempeladresse</th></tr></thead>
+          <tbody id="municipalities"></tbody>
+        </table>
+      </div>
+    </main>
+    <script type="module">
+      const summary = document.querySelector('#summary');
+      const search = document.querySelector('#municipality');
+      const filter = document.querySelector('#coverage-status');
+      const body = document.querySelector('#municipalities');
+      const labels = {
+        verified: 'Verifisert kalender',
+        'not-listed': 'Ikke i Norkarts register',
+        'no-dates-in-sample': 'Ingen datoer i adresseutvalget',
+        'request-failed': 'Oppslag feilet',
+        'invalid-calendar': 'Kalender kunne ikke verifiseres',
+        'no-address': 'Ingen eksempeladresse funnet',
+        'rate-limited': 'Norkart begrenset forespørslene – ikke verifisert',
+        'not-checked': 'Ikke kontrollert ennå',
+      };
+      async function load() {
+        try {
+          const response = await fetch('/coverage.json');
+          if (!response.ok) throw new Error('Rapporten kunne ikke hentes');
+          const report = await response.json();
+          const verified = report.municipalities.filter((item) => item.status === 'verified').length;
+          const listed = report.municipalities.filter((item) => item.listed).length;
+          summary.textContent = `Kontrollert ${new Date(report.checkedAt).toLocaleDateString('nb-NO')}: ${verified} av ${report.municipalities.length} kommuner har verifisert eksempelkalender. ${listed} er oppført i Norkarts register.`;
+          function render() {
+            const query = search.value.trim().toLocaleLowerCase('nb-NO');
+            const visible = report.municipalities.filter((item) =>
+              `${item.number} ${item.name}`.toLocaleLowerCase('nb-NO').includes(query) &&
+              (filter.value === 'all' || (filter.value === 'unverified' ? item.listed && item.status !== 'verified' : item.status === filter.value)));
+            body.replaceChildren();
+            for (const item of visible) {
+              const row = document.createElement('tr');
+              for (const value of [`${item.number} ${item.name}`, labels[item.status] ?? 'Ikke verifisert']) {
+                const cell = document.createElement('td');
+                cell.textContent = value;
+                row.append(cell);
+              }
+              const address = document.createElement('td');
+              if (item.sampleAddress) {
+                const link = document.createElement('a');
+                link.href = '/?q=' + encodeURIComponent(item.sampleAddress);
+                link.textContent = `${item.sampleAddress} (${item.events} hendelser)`;
+                address.append(link);
+              } else {
+                address.textContent = 'Ingen verifisert eksempelkalender';
+              }
+              row.append(address);
+              body.append(row);
+            }
+            document.querySelector('#count').textContent = `${visible.length} kommuner`;
+          }
+          search.addEventListener('input', render);
+          filter.addEventListener('change', render);
+          render();
+        } catch {
+          summary.textContent = 'Kunne ikke hente dekningsrapporten. Prøv igjen om litt.';
+        }
+      }
+      load();
+    </script>
+  </body>
+</html>
